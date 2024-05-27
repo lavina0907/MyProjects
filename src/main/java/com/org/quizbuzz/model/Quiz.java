@@ -16,6 +16,7 @@ public class Quiz {
 
     private String title;
 
+    // This is not normalised way to handle many to many mapping. for a many to many mapping we should have a separate table.
     @ManyToMany
     private List<Question> questions;
 

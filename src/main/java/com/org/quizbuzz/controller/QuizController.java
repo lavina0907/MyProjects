@@ -13,9 +13,11 @@ import java.util.List;
 @RequestMapping("quiz")
 public class QuizController {
 
+    //Always use constructor injection instead of field injection I have made changes in other classes for reference.
     @Autowired
     QuizService quizService;
 
+    //It's a post call so it is a good practice to use request body instead of request param.
     @PostMapping("create")
     public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam String title, @RequestParam int noOfQues){
 

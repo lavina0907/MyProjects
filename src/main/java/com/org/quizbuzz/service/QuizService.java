@@ -58,6 +58,7 @@ public class QuizService {
         int i=0;
 
         for(Response res : response){
+            // How would you make sure that sequence of provided answers is same as sequence of questions?
             if(res.getSubmittedAnswer().equals(questions.get(i).getRightAnswer()))
                     correct++;
 
