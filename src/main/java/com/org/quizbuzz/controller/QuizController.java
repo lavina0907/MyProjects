@@ -1,5 +1,6 @@
 package com.org.quizbuzz.controller;
 
+import com.org.quizbuzz.enums.DurationType;
 import com.org.quizbuzz.model.QuestionWrapper;
 import com.org.quizbuzz.model.Response;
 import com.org.quizbuzz.service.QuizService;
@@ -19,9 +20,9 @@ public class QuizController {
 
     //It's a post call so it is a good practice to use request body instead of request param.
     @PostMapping("create")
-    public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam String title, @RequestParam int noOfQues){
+    public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam String title, @RequestParam int noOfQues, @RequestParam int duration, @RequestParam String durationType){
 
-        return quizService.createQuiz(category,title,noOfQues);
+        return quizService.createQuiz(category,title,noOfQues, duration, DurationType.valueOf(durationType));
 
     }
 
